@@ -10,11 +10,10 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.TileDragAndDropManager
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
-    com.unity.multiplayer-hlapi.Editor.dll:
-    - UnityEditor.NetworkBehaviourInspector
-    - UnityEditor.NetworkIdentityEditor
-    - UnityEditor.NetworkTransformEditor
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
     com.unity.multiplayer-hlapi.Runtime.dll:
+    - UnityEngine.Networking.NetworkAnimator
+    - UnityEngine.Networking.NetworkCallbacks
     - UnityEngine.Networking.NetworkIdentity
     - UnityEngine.Networking.NetworkManager
     - UnityEngine.Networking.NetworkManagerHUD
@@ -39,31 +38,41 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
-    - Class: 65
-      Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 90
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9894}
+      Script: {instanceID: 9990}
     - Class: 114
-      Script: {instanceID: 9972}
+      Script: {instanceID: 10120}
     - Class: 114
-      Script: {instanceID: 10068}
+      Script: {instanceID: 10280}
     - Class: 114
-      Script: {instanceID: 10700}
+      Script: {instanceID: 11310}
     - Class: 114
-      Script: {instanceID: 11730}
+      Script: {instanceID: 12734}
+    - Class: 114
+      Script: {instanceID: 12958}
     - Class: 115
       Script: {instanceID: 0}
-    - Class: 135
+    - Class: 137
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
   scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: 3e9cf6b1094e823e923b09929026217e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectSelectionActionsViewData
   - hash:
       serializedVersion: 2
       Hash: 4bc4346a71a8df53a6b106f68ef3a190
@@ -72,10 +81,22 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
+      Hash: 8db0eb89e39f4c9ea76b78b32d117238
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementPathAutomaticRandomHeightAdjustmentSettings
+  - hash:
+      serializedVersion: 2
       Hash: 3c08375166df118bd1801438fc36b92f
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SelectionCaret
+  - hash:
+      serializedVersion: 2
+      Hash: b457c275202e09de7c06aaf9ad0f5e29
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: RandomRotationValueAxisRandomizationSettings
   - hash:
       serializedVersion: 2
       Hash: 87ff43d2baf3385cba327d8f803a4ebb
@@ -90,6 +111,18 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
+      Hash: 7d26ed16a91fbfa3104012980db7bced
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectMoveGizmo
+  - hash:
+      serializedVersion: 2
+      Hash: 6831f87d8ac0e0354d236705ccd1ecef
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementPathTileConnectionSettings
+  - hash:
+      serializedVersion: 2
       Hash: 5bd9a19c7b5f76c563418e28f48a561b
     assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
     namespaceName: UnityEngine.Networking
@@ -102,16 +135,52 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
+      Hash: 5e61cce38e6b6fc6a6a23c9137a6b1b2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectVertexSnapSessionRenderSettings
+  - hash:
+      serializedVersion: 2
+      Hash: e7ee2bba8fb7aa12d516c31c87fde665
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectCollectionMaskViewData
+  - hash:
+      serializedVersion: 2
       Hash: 04e4a8b0447477cc4e933d9e5311188f
     assemblyName: UnityEngine.XR.LegacyInputHelpers.dll
     namespaceName: UnityEngine.XR.LegacyInputHelpers
     className: ArmModel
   - hash:
       serializedVersion: 2
+      Hash: 301788eb1b20543095c1590742809354
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectIntersectionSettings
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: GroupTrack
+  - hash:
+      serializedVersion: 2
+      Hash: a378515d24623a6d5e21ad76a51dd223
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: MeshCombineWindow
+  - hash:
+      serializedVersion: 2
+      Hash: 55e76cadabff759976adfbd420558d4b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectSelectionPrefabCreationSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 557717076b0054b83f67cdd37eaf6c5f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectEraserSettings
   - hash:
       serializedVersion: 2
       Hash: a5781dc71a671b1ad2b38de19f24b71f
@@ -132,6 +201,18 @@ ScriptsOnlyBuild:
     className: Scrollbar
   - hash:
       serializedVersion: 2
+      Hash: c22070c7b201b67653a8fd656a714b10
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectMouseRotationSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 28e37f5e26bbac399109d6da97cc8381
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectLayerDatabase
+  - hash:
+      serializedVersion: 2
       Hash: eafb77726b67b7571818a7210a3ce11e
     assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
     namespaceName: UnityEngine.Networking
@@ -142,6 +223,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: PositionAsUV1
+  - hash:
+      serializedVersion: 2
+      Hash: 9f9dd7eddd0dbd7e654f58538c350f91
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: PrefabsToCategoryDropSettings
   - hash:
       serializedVersion: 2
       Hash: abf1930d8126d0b2e00e9449129a0190
@@ -156,10 +243,28 @@ ScriptsOnlyBuild:
     className: Image
   - hash:
       serializedVersion: 2
+      Hash: 69e6226b1eb083ae648d28ed5b5d5b21
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: BlockObjectPlacementSettings
+  - hash:
+      serializedVersion: 2
+      Hash: a378515d24623a6d5e21ad76a51dd223
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementSettingsWindow
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: TestResultRendererCallback
+  - hash:
+      serializedVersion: 2
+      Hash: a378515d24623a6d5e21ad76a51dd223
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectLayersWindow
   - hash:
       serializedVersion: 2
       Hash: 234235b9fb07320d11497e08a726cc56
@@ -168,16 +273,58 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
+      Hash: a6f70772de4d83c900b3614f51c59acc
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectUniformScaleRandomizationSettings
+  - hash:
+      serializedVersion: 2
       Hash: ad9173d3a69d99153f38ed4b62226129
     assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
     namespaceName: UnityEngine.Networking
     className: NetworkTransform
   - hash:
       serializedVersion: 2
+      Hash: fe124b8481b800dbfe546287689662b3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementGuide
+  - hash:
+      serializedVersion: 2
+      Hash: 351be692df14f3c93116d50a57c42572
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementBlockAutomaticRandomHeightAdjustmentSettings
+  - hash:
+      serializedVersion: 2
+      Hash: d8895882e23e4f79c97b9025a41fcdab
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: AxisRotationRandomizationModeSettings
+  - hash:
+      serializedVersion: 2
       Hash: 7ab0e790220bdca831fdd886b339039d
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: GridLayoutGroup
+  - hash:
+      serializedVersion: 2
+      Hash: 9d6855d7c538c4d590ed9fe61cb85ff8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: Octave3DWorldBuilder
+  - hash:
+      serializedVersion: 2
+      Hash: aa3bb253edde03555af278e7424957b3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: PathObjectPlacementSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 794bcc990e864ad2c108df2ec9a72840
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementPathTileConnectionConfiguration
   - hash:
       serializedVersion: 2
       Hash: 8aa3d6ccbcb54ee8db6c1229854adaaa
@@ -190,6 +337,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalAsset
+  - hash:
+      serializedVersion: 2
+      Hash: a4eaf0bf772042fc297fc0f4c3ed2e6d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectEraser
   - hash:
       serializedVersion: 2
       Hash: eced9a745839ccf7c2e76262f039e2ef
@@ -210,6 +363,18 @@ ScriptsOnlyBuild:
     className: PhysicsRaycaster
   - hash:
       serializedVersion: 2
+      Hash: b0f2024268d5170d4ada7fba0af89e4a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: InteractableMirror
+  - hash:
+      serializedVersion: 2
+      Hash: 58256278b3c42ca7b37c175246909c0d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectSelectionExtrudeGizmo
+  - hash:
+      serializedVersion: 2
       Hash: bd3cf68c8964d3c66d1c43f4f98508c9
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
@@ -220,6 +385,18 @@ ScriptsOnlyBuild:
     assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
     namespaceName: UnityEngine.Networking
     className: NetworkProximityChecker
+  - hash:
+      serializedVersion: 2
+      Hash: 92badbc2799cc496e527f94021c9b596
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: PrefabCategoryDatabase
+  - hash:
+      serializedVersion: 2
+      Hash: 4d4b5cb646e41192c883e9bc24a6fd10
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementPathRenderSettings
   - hash:
       serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
@@ -234,6 +411,18 @@ ScriptsOnlyBuild:
     className: RectMask2D
   - hash:
       serializedVersion: 2
+      Hash: 7d0c013373c0a28f8d3d5f6be7672c1e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: XZGrid
+  - hash:
+      serializedVersion: 2
+      Hash: 5f0a63b7852b9ed6535ee9b9b26dd60d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: InteractableMirrorRenderSettings
+  - hash:
+      serializedVersion: 2
       Hash: 4e9333594897a1fb8b136ad2eae996c7
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -246,10 +435,34 @@ ScriptsOnlyBuild:
     className: TransitionArmModel
   - hash:
       serializedVersion: 2
+      Hash: 013e8c529055f7e6606b2c9ae3798a0e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectLayerObjectMaskViewData
+  - hash:
+      serializedVersion: 2
+      Hash: 2814bbedfee06e828c5abb1f211a0fd2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementPathTileConnectionConfigurationDatabase
+  - hash:
+      serializedVersion: 2
       Hash: 5ab533713adae59372fb3e10a585c186
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AnimationPlayableAsset
+  - hash:
+      serializedVersion: 2
+      Hash: a378515d24623a6d5e21ad76a51dd223
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: PrefabManagementWindow
+  - hash:
+      serializedVersion: 2
+      Hash: a5bd12472f3cf78e3aecf8985eaa2244
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: DecorPaintSlopeSettings
   - hash:
       serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
@@ -270,10 +483,28 @@ ScriptsOnlyBuild:
     className: Shadow
   - hash:
       serializedVersion: 2
+      Hash: f5f995c247c6b6373b3996502b0bef0c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementBlockSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 7c1bd0878e97a280364b0038867fb3e7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementPathHeightPatternDatabaseViewData
+  - hash:
+      serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: EventSystem
+  - hash:
+      serializedVersion: 2
+      Hash: fcba218bb6d1ef66a54472769e0af1f1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: PrefabFilter
   - hash:
       serializedVersion: 2
       Hash: 0fb27be807aa299702f28ad0bcad1f46
@@ -282,10 +513,46 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
+      Hash: 02e815546985f01867ccfa857bda325d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: PrefabInstantiationSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 124a6376bc3c504bb125fa213c6fe191
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementBlockManualConstructionSettings
+  - hash:
+      serializedVersion: 2
+      Hash: e5bf7c9181fe9fe0bf27842dcd8a7b22
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectRotationRandomizationSettings
+  - hash:
+      serializedVersion: 2
       Hash: b8a5e8091ab0b8861d2add371082c5e0
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_SpriteAsset
+  - hash:
+      serializedVersion: 2
+      Hash: 67dc7197f9cd71b1ea5ca6bb22497216
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectMouseUniformScaleSettings
+  - hash:
+      serializedVersion: 2
+      Hash: c2eed6432336ef8a56073a4b270a88d6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementBlockSubdivisionSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 5300db1bfb8c92b4f6451da3483eb6d6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ActivePrefabCategoryViewData
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -294,10 +561,46 @@ ScriptsOnlyBuild:
     className: ControlTrack
   - hash:
       serializedVersion: 2
+      Hash: 68d484edb9e5264a073cdc0c343bd800
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementBlockRenderSettings
+  - hash:
+      serializedVersion: 2
       Hash: 8dc90e648ac06f43bdd31ac9fa8f4579
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Selectable
+  - hash:
+      serializedVersion: 2
+      Hash: ae19b5b5d5fed139727bf9c45884f5a5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: CoordinateSystemAxisRenderSettings
+  - hash:
+      serializedVersion: 2
+      Hash: b7e075f4d2f607794c5700bb961f82d5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: PrefabCategory
+  - hash:
+      serializedVersion: 2
+      Hash: 4d5b72752573e7ff0b96dc994b3e05ab
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectColliderSnapSurfaceGridSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 1e363c07fe2e6a720d9d03f36a7d30f3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: DecorPaintObjectPlacementBrushDatabaseViewData
+  - hash:
+      serializedVersion: 2
+      Hash: 3dd0d39e3c26d9640d0a31ebe00d1362
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectOnSurfaceProjectSettings
   - hash:
       serializedVersion: 2
       Hash: 265cf27ba050d55ff33a8acab4ded6c0
@@ -312,10 +615,58 @@ ScriptsOnlyBuild:
     className: NetworkTransformVisualizer
   - hash:
       serializedVersion: 2
+      Hash: 989fca5e4c1c828fde9e5b9ac694e152
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementPathPaddingSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 02128098f91ec4dbc3dd2df4e3472efb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectSelectionGizmos
+  - hash:
+      serializedVersion: 2
+      Hash: 6ea574ef5dd180dd59c7e77de789b788
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectScaleRandomizationSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 001936dfbf20ddb6ca6e40213dc987d4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementBlockHeightAdjustmentSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 2c0f883a98974ce2f17a03ca96bb3c18
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementPathManualConstructionSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 7950017bd823fc4bf37e3cf9f5629cf7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementPathBorderSettings
+  - hash:
+      serializedVersion: 2
       Hash: b3ab2106268377ffe25dd18ac23dca28
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_Asset
+  - hash:
+      serializedVersion: 2
+      Hash: f56c5516334022160e1a18f542f7dcea
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: Object2DMassEraseSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 3e693f6d4ec90f269426b58b79fe08ba
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: MeshCombineSettings
   - hash:
       serializedVersion: 2
       Hash: d4020bafcd3ccbb5601a6e6c8ac78be0
@@ -324,16 +675,82 @@ ScriptsOnlyBuild:
     className: ScrollRect
   - hash:
       serializedVersion: 2
+      Hash: a9d7ff76622152374e577f0172d74199
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementPathHeightAdjustmentSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 1dd74036e4955677203f6a9ec9b28e27
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: Octave3DConfigSaveWindow
+  - hash:
+      serializedVersion: 2
+      Hash: 1dd74036e4955677203f6a9ec9b28e27
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: Octave3DConfigLoadWindow
+  - hash:
+      serializedVersion: 2
+      Hash: de761000405da61052929eb42a3e1c08
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementPathHeightPattern
+  - hash:
+      serializedVersion: 2
+      Hash: 354ea2f980db9f45ea17b8e01c564d2a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: InteractableMirrorSettings
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalTrack
   - hash:
       serializedVersion: 2
+      Hash: b1eac49ad8934ceb55a8865839463c5c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: PrefabTagDatabase
+  - hash:
+      serializedVersion: 2
+      Hash: 838538e93ed98eecffbfb80fc0f61a61
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementPathSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 490f610ca022ac1c1c38f9dcc603e397
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementBlockManualHeightAdjustmentSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 2ca49f973eb1f1d90e4638b4e670be71
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectSnapSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 8ba1b02233c6de720717f8d7b3322b90
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementPathTileConnectionTypeSettings
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
     namespaceName: UnityEngine.Networking
     className: NetworkCallbacks
+  - hash:
+      serializedVersion: 2
+      Hash: a378515d24623a6d5e21ad76a51dd223
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectGrabSettingsWindow
   - hash:
       serializedVersion: 2
       Hash: 21e871d89bbce53c038fc75ad1b7c7f3
@@ -348,10 +765,58 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAnimator
   - hash:
       serializedVersion: 2
+      Hash: 7afe7dc9ca574881e50e4c95cd935cda
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectGroupDatabaseViewData
+  - hash:
+      serializedVersion: 2
+      Hash: bd4f923c858aa822d3d939106a6602ad
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectLayerObjectMask
+  - hash:
+      serializedVersion: 2
+      Hash: a378515d24623a6d5e21ad76a51dd223
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: Octave3DFixWindow
+  - hash:
+      serializedVersion: 2
+      Hash: a378515d24623a6d5e21ad76a51dd223
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: PrefabsToCategoryDropSettingsWindow
+  - hash:
+      serializedVersion: 2
+      Hash: dda0f738f9b026b1e45f2dd90f52463e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementPathTileConnectionConfigurationDatabaseViewData
+  - hash:
+      serializedVersion: 2
+      Hash: f7773fb5006fdc651d7fe4eef14374b9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: SingleDecorPaintModeObjectPlacementSettings
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner.Callbacks
     className: RemoteTestResultSender
+  - hash:
+      serializedVersion: 2
+      Hash: fc60a39499b90e321e3e4ac5fd489975
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectSelectionBoxRenderModeSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 2c79cd4050db4372bee153db36dd8e52
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: PrefabTagAssociations
   - hash:
       serializedVersion: 2
       Hash: 4fd8bf02e3089425d3502e26c44ba31a
@@ -360,16 +825,70 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
+      Hash: 55aa52e732245985ed93f17413002e84
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectSelectionRenderSettings
+  - hash:
+      serializedVersion: 2
       Hash: 5f1752ed2092162f016c19510c28a8b9
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Button
   - hash:
       serializedVersion: 2
+      Hash: 4668adb81f241fea243926a6a479edb9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementBlockPaddingSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 01b286335a8137102946338c1e0aa6f0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: PrefabTagFilter
+  - hash:
+      serializedVersion: 2
       Hash: feb9a5a121d15fa3654d4e50a5233045
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: RawImage
+  - hash:
+      serializedVersion: 2
+      Hash: 02e5458fd693c8cf3d4acef486290be2
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: Object3DMassEraseSettings
+  - hash:
+      serializedVersion: 2
+      Hash: eb123c28afb1e5bcf1a0864567e1fca8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectMouseMoveAlongDirectionSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 4139b810730e3fd3b94ab3a9a91594b9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectKeyboardRotationSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 6730eb2ee075dbc89840eb5dd9ea51b7
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: AxisRotationRandomizationSettings
+  - hash:
+      serializedVersion: 2
+      Hash: a3e405d181e0b540b7ade58cbf5e9d87
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: EntityNameFilter
+  - hash:
+      serializedVersion: 2
+      Hash: 85795d1ff8f7546baa43b46dfd4556e8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: PointAndClickObjectPlacementSettings
   - hash:
       serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
@@ -384,6 +903,24 @@ ScriptsOnlyBuild:
     className: NetworkStartPosition
   - hash:
       serializedVersion: 2
+      Hash: 1f82c9502e06e31808f34d391d5ee859
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: EllipseShapeRenderSettings
+  - hash:
+      serializedVersion: 2
+      Hash: a57e2b974ebcf01450168d37e4d883cc
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: CustomAxisKeyboardRotationSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 0eda6fab14f0842afd2784a5665ccda1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: XZGridRenderSettings
+  - hash:
+      serializedVersion: 2
       Hash: 783f593b9380cf72d0f7ebfd4a0d4bcd
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -394,6 +931,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: SignalReceiver
+  - hash:
+      serializedVersion: 2
+      Hash: a378515d24623a6d5e21ad76a51dd223
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: DecorPaintBrushViewLookAndFeelWindow
   - hash:
       serializedVersion: 2
       Hash: 5ad4aa237d47ac2bab17bacb672edf7a
@@ -420,6 +963,12 @@ ScriptsOnlyBuild:
     className: ActivationPlayableAsset
   - hash:
       serializedVersion: 2
+      Hash: 5d73a5424bb8c88e836a9f97c3e2bf22
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementPathHeightPatternDatabase
+  - hash:
+      serializedVersion: 2
       Hash: 18c222bef9ae745ce69ddde9b74337ca
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
@@ -438,10 +987,106 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
+      Hash: 01c67c24950119326729cfb6ac0d4ecf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: PrefabTag
+  - hash:
+      serializedVersion: 2
+      Hash: b3f1438f07e441f487bcd30ccd536831
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectSnapping
+  - hash:
+      serializedVersion: 2
+      Hash: 64a8fd34e6ff51f615d7721746814a5c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementPathManualConstructionRenderSettings
+  - hash:
+      serializedVersion: 2
+      Hash: ab208411f3ed759f127a31ca3ee40176
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: Prefab
+  - hash:
+      serializedVersion: 2
+      Hash: ff333c5d615048258bfa0f4a760ac98c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: PrefabTagSelectionViewData
+  - hash:
+      serializedVersion: 2
+      Hash: 90b160f07e671a2278aa6ef1f23c294d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: PrefabActivationSettings
+  - hash:
+      serializedVersion: 2
+      Hash: f76b4df737ffa29cd3eabae66d985a9c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectGroup
+  - hash:
+      serializedVersion: 2
+      Hash: d467c914867b4619efdd0d0e1fbe0a09
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacement
+  - hash:
+      serializedVersion: 2
+      Hash: 6e27ab243dee49a5ac8710f2310a893e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementPathManualHeightAdjustmentSettings
+  - hash:
+      serializedVersion: 2
+      Hash: a378515d24623a6d5e21ad76a51dd223
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: PrefabCategoryScrollViewLookAndFeelWindow
+  - hash:
+      serializedVersion: 2
+      Hash: be9ab46e5d6ccabfd301321fa1c05c46
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: PrefabFoldersToCategoryDropSettings
+  - hash:
+      serializedVersion: 2
+      Hash: e22ea9993a3d152b61282035f2832cbe
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: XZOrientedEllipseShapeRenderSettings
+  - hash:
+      serializedVersion: 2
+      Hash: c5892f11146c986d7a80275a085e1a1b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: PrefabsToPathTileConectionButtonDropSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 70254034f8cf93155c445b9ba32badc0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: PrefabCategoryPrefabScrollViewData
+  - hash:
+      serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
     namespaceName: UnityEngine.Networking
     className: NetworkBehaviour
+  - hash:
+      serializedVersion: 2
+      Hash: 41f7dd2ae06657ef60f8dbc841987cf3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: CustomAxisRotationRandomizationSettings
+  - hash:
+      serializedVersion: 2
+      Hash: f35a9f16ce3809d2d645a0ca5c312043
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: AxisKeyboardRotationSettings
   - hash:
       serializedVersion: 2
       Hash: 3b760e6526e13f7504f59e210145899a
@@ -450,10 +1095,40 @@ ScriptsOnlyBuild:
     className: TextMeshProUGUI
   - hash:
       serializedVersion: 2
+      Hash: 95398b94e23f1e9fccfbe13cbdfcf213
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: BrushDecorPaintModeObjectPlacementSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 83eb46d3356b44977b5e9ab94c84aa3d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementPathHeightPatternViewData
+  - hash:
+      serializedVersion: 2
+      Hash: 716a12ddf1e29ebc19cb41fd0ae15da5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementBlockManualConstructionRenderSettings
+  - hash:
+      serializedVersion: 2
+      Hash: b427242beb4962d7ababf658108ffa5b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: CoordinateSystemRenderSettings
+  - hash:
+      serializedVersion: 2
       Hash: f336e086360abe49a3323e5f1583c35a
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AudioTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 8b4fe1cb19cde2196fef4d4428c31f53
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementExtensionPlaneRenderSettings
   - hash:
       serializedVersion: 2
       Hash: ae83e830e7a90c0aff918c4c2e520825
@@ -462,10 +1137,70 @@ ScriptsOnlyBuild:
     className: GraphicRaycaster
   - hash:
       serializedVersion: 2
+      Hash: 4b999ca9464459d02e8259b51eeaa1c9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPivotPointsRenderSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 17d5edd3e40a79b32974a6168ed07cae
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: AxisMouseRotationSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 5bd4049cdf01e5911de9be53206f2ccf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectSelectionSettings
+  - hash:
+      serializedVersion: 2
       Hash: 88cc9df3c6fc697bfbeacd24c0d6f2d7
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools
     className: BeforeAfterTestCommandState
+  - hash:
+      serializedVersion: 2
+      Hash: 60a1d213deb2e7087774f71bbd4578ea
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: RandomRotationStepAxisRandomizationSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 4665d395cd19f48976e554d29bf1d4c4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectGroupDatabase
+  - hash:
+      serializedVersion: 2
+      Hash: 3f9351bf80881093c68f0c3c24425f76
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: AxisAlignmentSettings
+  - hash:
+      serializedVersion: 2
+      Hash: d8c3f2fc81d94a2412985df45b302e68
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 0ae5a89ad670e0c4cba45e57b9d70a2e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementPathHeightPatternFilter
+  - hash:
+      serializedVersion: 2
+      Hash: 5e0ba1a7578835854e285807ba83cd97
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: DecorPaintBrushViewData
+  - hash:
+      serializedVersion: 2
+      Hash: 898239b1c9a62362c1389b8a42ece5b5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ProjectedBoxFacePivotPointsRenderSettings
   - hash:
       serializedVersion: 2
       Hash: 1dcb82730d983b77cec736c6ef19f814
@@ -480,10 +1215,46 @@ ScriptsOnlyBuild:
     className: SwingArmModel
   - hash:
       serializedVersion: 2
+      Hash: a378515d24623a6d5e21ad76a51dd223
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: PrefabTagsWindow
+  - hash:
+      serializedVersion: 2
+      Hash: ea82a8edf912f6fde390d3e0f6719c25
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectGrabSettings
+  - hash:
+      serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: MarkerTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 3a3292577140c40addfa64349b18d90a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: XZGridCellSizeSettings
+  - hash:
+      serializedVersion: 2
+      Hash: cfc5e679fb02d1bcb41cecb87f39613d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: DecorPaintObjectPlacementBrushDatabase
+  - hash:
+      serializedVersion: 2
+      Hash: f59d413a73d895d11e0d238d62fda045
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: DecorPaintObjectPlacementBrush
+  - hash:
+      serializedVersion: 2
+      Hash: c5417a2f8fcca9992176323ea8c024a1
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectSelectionPaintModeSettings
   - hash:
       serializedVersion: 2
       Hash: d791aa6007fa3640be1164ea75bb087d
@@ -492,10 +1263,52 @@ ScriptsOnlyBuild:
     className: TMP_StyleSheet
   - hash:
       serializedVersion: 2
+      Hash: 3e8bff4df5194c2c61fb4886bcc34527
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: RectangleShapeRenderSettings
+  - hash:
+      serializedVersion: 2
+      Hash: c169c77edb23ed8e1f71fd84b1b354f9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: LabelRenderSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 7d26ed16a91fbfa3104012980db7bced
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectRotationGizmo
+  - hash:
+      serializedVersion: 2
       Hash: e6ae40841db498b6e673877ac45ad208
     assemblyName: com.unity.multiplayer-hlapi.Runtime.dll
     namespaceName: UnityEngine.Networking
     className: NetworkAnimator
+  - hash:
+      serializedVersion: 2
+      Hash: 5d220a459fa4f464e87ec9731463df0c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: Octave3DConfigSaveLoadSettings
+  - hash:
+      serializedVersion: 2
+      Hash: af35aa3e23c7fb85ed0f280757da184a
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: DecorPaintObjectPlacementBrushCircleRenderSettings
+  - hash:
+      serializedVersion: 2
+      Hash: d79cb706c8628d18f6e976fb70b1b3a0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectCollectionMask
+  - hash:
+      serializedVersion: 2
+      Hash: f6546c14c4dba05cd330106b0a68cd92
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ScriptableObjectPool
   - hash:
       serializedVersion: 2
       Hash: df434544c9f7b33d1cc7e635b180d279
@@ -504,10 +1317,22 @@ ScriptsOnlyBuild:
     className: TextMeshPro
   - hash:
       serializedVersion: 2
+      Hash: bb238d941e8a4434f9cbccab48b43a43
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectSelection
+  - hash:
+      serializedVersion: 2
       Hash: 3165968ba45c74472d279ba04455fccb
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_ColorGradient
+  - hash:
+      serializedVersion: 2
+      Hash: eea0f5b8a9a5ef0b1f27aa0ae1e0727b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: DecorPaintObjectPlacement
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -520,6 +1345,18 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: BaseInput
+  - hash:
+      serializedVersion: 2
+      Hash: 98905695d0dd3651e2a7480778662c40
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: EditorWindowPool
+  - hash:
+      serializedVersion: 2
+      Hash: 16eafb325c81b1b92e54b4ecc1f4f206
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: Inspector
   - hash:
       serializedVersion: 2
       Hash: 9b895dcabbc1faf095c000c32d471fd0
@@ -552,6 +1389,18 @@ ScriptsOnlyBuild:
     className: TMP_SubMesh
   - hash:
       serializedVersion: 2
+      Hash: 87ff5d01ae8387249b854346a185545f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementGuideSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 7b1cb26ff5227302350e7857e52ae6a8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: CustomAxisMouseRotationSettings
+  - hash:
+      serializedVersion: 2
       Hash: 20eeaeae829475b5e354d1f626c51a2b
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools.TestRunner
@@ -564,10 +1413,40 @@ ScriptsOnlyBuild:
     className: Dropdown
   - hash:
       serializedVersion: 2
+      Hash: 089fac851b42ae0acbe8bf7354a5da16
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: DecorPaintObjectPlacementBrushElement
+  - hash:
+      serializedVersion: 2
+      Hash: f0abdeefd4f8ee83af66514dae1df158
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: PrefabTagDatabaseViewData
+  - hash:
+      serializedVersion: 2
+      Hash: 7d26ed16a91fbfa3104012980db7bced
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectScaleGizmo
+  - hash:
+      serializedVersion: 2
+      Hash: 8f79d464a6fa2f0a23e16fbbd566c34b
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: DecorPaintObjectPlacementSettings
+  - hash:
+      serializedVersion: 2
       Hash: 748dd2a2a28da4e618912da5ac45684b
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: StandaloneInputModule
+  - hash:
+      serializedVersion: 2
+      Hash: 8a61564691c393cd61ddce70df98d549
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: SingleObjectPivotPointRenderSettings
   - hash:
       serializedVersion: 2
       Hash: aa88ae22474df55295327e4ee99e5a24
@@ -592,6 +1471,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ToggleGroup
+  - hash:
+      serializedVersion: 2
+      Hash: cdf35ad4f4719dfe23523e66bcb8a74d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: O3DWB
+    className: ObjectPlacementPathAutomaticPatternHeightAdjustmentSettings
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb

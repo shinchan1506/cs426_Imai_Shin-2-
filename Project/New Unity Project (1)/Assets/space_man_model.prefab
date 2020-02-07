@@ -896,8 +896,8 @@ Animator:
   m_GameObject: {fileID: 7774619879705626048}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 90dac3abf1179b342b84e3c83039fa77, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
+  m_Controller: {fileID: 9100000, guid: 3fddf5519a321ec4bb1315b9ec0a1a9e, type: 2}
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
@@ -970,7 +970,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4040fbb2e0323bb4bb0b4dc26b9a4074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
+  bulletPrefab: {fileID: 6519866171776924012, guid: abd6466637e3685479981024d4975fd3,
+    type: 3}
 --- !u!114 &952341691302289243
 MonoBehaviour:
   m_ObjectHideFlags: 0
