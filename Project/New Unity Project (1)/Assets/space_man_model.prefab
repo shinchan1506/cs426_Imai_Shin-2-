@@ -862,6 +862,8 @@ GameObject:
   - component: {fileID: -268748054997996672}
   - component: {fileID: 8456744846717660188}
   - component: {fileID: 952341691302289243}
+  - component: {fileID: 586568908804822209}
+  - component: {fileID: -3691149830353638349}
   m_Layer: 0
   m_Name: space_man_model
   m_TagString: Untagged
@@ -994,6 +996,38 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
+--- !u!64 &586568908804822209
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7774619879705626048}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300020, guid: ed66f407effdce94fa9c1211a10e358d, type: 3}
+--- !u!143 &-3691149830353638349
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7774619879705626048}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 0.45
+  m_Radius: 0.2
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.25, z: 0}
 --- !u!1 &7774619879705626050
 GameObject:
   m_ObjectHideFlags: 0
