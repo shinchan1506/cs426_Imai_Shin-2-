@@ -10,11 +10,14 @@ using UnityEngine.Networking;
 
 public class PlayerMovement : NetworkBehaviour
 {
+    private int numBirds = 0;
+    private int numEggs = 0;
     CharacterController characterController;
     Animator anim;
-    float speed = 0.01f;
-    float jumpSpeed = 8.0f;
-    float gravity = 20.0f;
+    public GameObject explosion;
+    float speed = 0.02f;
+    float jumpSpeed = 0.08f;
+    float gravity = 0.098f;
     const int SENSITIVITY = 1;
     const float DEFAULT_RADIUS = 1.5f;
     const float MIN_RADIUS = 1;
@@ -22,14 +25,19 @@ public class PlayerMovement : NetworkBehaviour
     float radius;
 
     float oldAngle = 0;
-	float oldAngleY = 45;
+    float oldAngleY = 45;
     private float forward;
     private Vector3 moveDirection = Vector3.zero;
-
+    private Vector3 lookDirection;
+    private Vector3 viewOffset = new Vector3(0, 0.6f, 0);
     private bool camLocked = true;
-    void Start ()
+    private bool qDebounce = false;
+
+
+    void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         anim = GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
         radius = DEFAULT_RADIUS;
@@ -44,96 +52,156 @@ public class PlayerMovement : NetworkBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!isLocalPlayer)
+        if (!isLocalPlayer)
             return;
 
         // set parameters for blend tree animations
-        float move = Input.GetAxis ("Vertical");
+        float move = Input.GetAxis("Vertical");
         float moveHoriz = Input.GetAxis("Horizontal");
-        anim.SetFloat("Speed", move);
-        anim.SetFloat("HorizSpeed", moveHoriz);
-        
-
+        anim.SetFloat("multiplier", 1f);
+        // print ("eggs: " + numEggs + " birds: " + numBirds);
         // movement
-        if (characterController.isGrounded) {
-            moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
-            moveDirection *= speed;
+        if (characterController.isGrounded)
+        {
+            moveDirection = Vector3.zero + Camera.main.transform.forward * move + Camera.main.transform.right * moveHoriz;
+            if (moveDirection.magnitude > 0)
+            {
+                lookDirection = moveDirection;
+                anim.SetFloat("Speed", 1);
+            }
+            else
+            {
+                anim.SetFloat("Speed", 0);
+            }
 
-            if (Input.GetButton("Jump")) {
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                moveDirection *= speed * 1.25f;
+                anim.SetFloat("multiplier", 4f);
+            }
+            else
+            {
+                moveDirection *= speed;
+            }
+
+            if (Input.GetButton("Jump"))
+            {
                 moveDirection.y = jumpSpeed;
             }
 
-            if (Input.GetKey(KeyCode.E)) {
+            if (Input.GetKey(KeyCode.E))
+            {
                 // interact with bird / egg
+                Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 1);
+                int i = 0;
+                bool foundenemy = false;
+                while (i < hitColliders.Length)
+                {
+                    Collect c = hitColliders[i].GetComponent<Collect>();
+                    if (c != null)
+                    {
+                        int enemyType = c.destroyBody();
+                        if (enemyType == 0)
+                        {
+                            numEggs++;
+                        }
+                        else
+                        {
+                            numBirds++;
+                        }
+                        foundenemy = true;
+                    }
+                    i++;
+                }
+                if (foundenemy)
+                {
+                    explosion.GetComponent<ParticleSystem>().Play();
+                }
             }
 
-            if (Input.GetKeyUp(KeyCode.Escape)) {
-                if (camLocked == true){
+            if (Input.GetKey(KeyCode.Q) && qDebounce == false)
+            {
+                qDebounce = true;
+                if (camLocked == true)
+                {
                     camLocked = false;
+                    Cursor.visible = true;
                     Cursor.lockState = CursorLockMode.None;
                 }
-                else{
+                else
+                {
                     camLocked = true;
+                    Cursor.visible = false;
                     Cursor.lockState = CursorLockMode.Locked;
                 }
+                qDebounce = false;
             }
         }
 
         AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
-        
+
         // zoom in or zoom out based on scroll wheel
         float deltaScroll = Input.mouseScrollDelta.y;
-        if (deltaScroll > 0f) {
+        if (deltaScroll > 0f)
+        {
             onZoomIn();
         }
-        if (deltaScroll < 0f) {
+        if (deltaScroll < 0f)
+        {
             onZoomOut();
         }
 
-        if (camLocked == true) {
+        if (camLocked == true)
+        {
             //camera positioning based on mouse delta
             float deltaX = -Input.GetAxis("Mouse X");
             float deltaY = Input.GetAxis("Mouse Y");
-            
 
-            float newAngleY = oldAngleY + (float)(deltaY/SENSITIVITY * Math.PI);
 
-            if (newAngleY < 0) {
-                    newAngleY = 0;
-            } else if (newAngleY > 80) {
-                    newAngleY = 80;
+            float newAngleY = oldAngleY + (float)(deltaY / SENSITIVITY * Math.PI);
+
+            if (newAngleY < 0)
+            {
+                newAngleY = 0;
+            }
+            else if (newAngleY > 80)
+            {
+                newAngleY = 80;
             }
 
             Vector3 cf = new Vector3(
-                        this.transform.position.x + (float)(radius * Math.Cos(DegreeToRadian(oldAngle + (deltaX/SENSITIVITY * Math.PI)))),
+                        this.transform.position.x + (float)(radius * Math.Cos(DegreeToRadian(oldAngle + (deltaX / SENSITIVITY * Math.PI)))),
                         this.transform.position.y + (float)(radius * Math.Cos(DegreeToRadian(newAngleY))),
-                        this.transform.position.z + (float)(radius* Math.Sin(DegreeToRadian(oldAngle + (deltaX/SENSITIVITY * Math.PI))))
+                        this.transform.position.z + (float)(radius * Math.Sin(DegreeToRadian(oldAngle + (deltaX / SENSITIVITY * Math.PI))))
                         );
 
             // update old values
-            oldAngle = oldAngle + (float)(deltaX/SENSITIVITY * Math.PI);
+            oldAngle = oldAngle + (float)(deltaX / SENSITIVITY * Math.PI);
             oldAngleY = newAngleY;
             Camera.main.transform.position = cf;
-            Camera.main.transform.LookAt(this.transform.position);
-            Camera.main.transform.parent = this.transform;
+            Camera.main.transform.LookAt(this.transform.position + viewOffset);
         }
         moveDirection.y -= gravity * Time.deltaTime;
         // Move the controller
+        this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(new Vector3(lookDirection.x, 0, lookDirection.z), Vector3.up), Time.deltaTime * 8);
+
         characterController.Move(moveDirection);
     }
 
     private double DegreeToRadian(double angle)
     {
-    return Math.PI * angle / 180.0;
-    }
-    
-    void onZoomOut() {
-		if (radius < MAX_RADIUS)
-			radius = radius + 0.5f;
+        return Math.PI * angle / 180.0;
     }
 
-    void onZoomIn() {
-		if (radius > MIN_RADIUS)
-			radius = radius - 0.5f;
+    void onZoomOut()
+    {
+        if (radius < MAX_RADIUS)
+            radius = radius + 0.5f;
+    }
+
+    void onZoomIn()
+    {
+        if (radius > MIN_RADIUS)
+            radius = radius - 0.5f;
     }
 }
