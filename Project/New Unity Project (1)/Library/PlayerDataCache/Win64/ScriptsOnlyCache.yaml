@@ -1,7 +1,102 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Collect
+    - O3DWB.ActivePrefabCategoryViewData
+    - O3DWB.AxisAlignmentSettings
+    - O3DWB.AxisKeyboardRotationSettings
+    - O3DWB.AxisMouseRotationSettings
+    - O3DWB.AxisRotationRandomizationSettings
+    - O3DWB.BlockObjectPlacementSettings
+    - O3DWB.CoordinateSystemAxisRenderSettings
+    - O3DWB.CoordinateSystemRenderSettings
+    - O3DWB.CustomAxisKeyboardRotationSettings
+    - O3DWB.CustomAxisMouseRotationSettings
+    - O3DWB.CustomAxisRotationRandomizationSettings
+    - O3DWB.DecorPaintObjectPlacement
+    - O3DWB.DecorPaintObjectPlacementBrushDatabase
+    - O3DWB.DecorPaintObjectPlacementSettings
+    - O3DWB.EditorWindowPool
+    - O3DWB.EllipseShapeRenderSettings
+    - O3DWB.EntityNameFilter
+    - O3DWB.Inspector
+    - O3DWB.InteractableMirror
+    - O3DWB.InteractableMirrorRenderSettings
+    - O3DWB.InteractableMirrorSettings
+    - O3DWB.LabelRenderSettings
+    - O3DWB.ObjectCollectionMask
+    - O3DWB.ObjectColliderSnapSurfaceGridSettings
+    - O3DWB.ObjectEraser
+    - O3DWB.ObjectEraserSettings
+    - O3DWB.ObjectGroupDatabase
+    - O3DWB.ObjectGroupDatabaseViewData
+    - O3DWB.ObjectIntersectionSettings
+    - O3DWB.ObjectKeyboardRotationSettings
+    - O3DWB.ObjectLayerObjectMask
+    - O3DWB.ObjectMouseRotationSettings
+    - O3DWB.ObjectMoveGizmo
+    - O3DWB.ObjectOnSurfaceProjectSettings
+    - O3DWB.ObjectPivotPointsRenderSettings
+    - O3DWB.ObjectPlacement
+    - O3DWB.ObjectPlacementBlockHeightAdjustmentSettings
+    - O3DWB.ObjectPlacementBlockManualConstructionRenderSettings
+    - O3DWB.ObjectPlacementBlockManualConstructionSettings
+    - O3DWB.ObjectPlacementBlockManualHeightAdjustmentSettings
+    - O3DWB.ObjectPlacementBlockPaddingSettings
+    - O3DWB.ObjectPlacementBlockRenderSettings
+    - O3DWB.ObjectPlacementBlockSettings
+    - O3DWB.ObjectPlacementBlockSubdivisionSettings
+    - O3DWB.ObjectPlacementExtensionPlaneRenderSettings
+    - O3DWB.ObjectPlacementGuideSettings
+    - O3DWB.ObjectPlacementPathBorderSettings
+    - O3DWB.ObjectPlacementPathHeightAdjustmentSettings
+    - O3DWB.ObjectPlacementPathManualConstructionSettings
+    - O3DWB.ObjectPlacementPathManualHeightAdjustmentSettings
+    - O3DWB.ObjectPlacementPathPaddingSettings
+    - O3DWB.ObjectPlacementPathSettings
+    - O3DWB.ObjectPlacementPathTileConnectionConfigurationDatabase
+    - O3DWB.ObjectPlacementPathTileConnectionSettings
+    - O3DWB.ObjectPlacementPathTileConnectionTypeSettings
+    - O3DWB.ObjectPlacementSettings
+    - O3DWB.ObjectRotationGizmo
+    - O3DWB.ObjectRotationRandomizationSettings
+    - O3DWB.ObjectScaleGizmo
+    - O3DWB.ObjectScaleRandomizationSettings
+    - O3DWB.ObjectSelection
+    - O3DWB.ObjectSelectionActionsViewData
+    - O3DWB.ObjectSelectionBoxRenderModeSettings
+    - O3DWB.ObjectSelectionGizmos
+    - O3DWB.ObjectSelectionPrefabCreationSettings
+    - O3DWB.ObjectSelectionRenderSettings
+    - O3DWB.ObjectSelectionSettings
+    - O3DWB.ObjectSnapSettings
+    - O3DWB.ObjectSnapping
+    - O3DWB.ObjectVertexSnapSessionRenderSettings
+    - O3DWB.Octave3DWorldBuilder
+    - O3DWB.PathObjectPlacementSettings
+    - O3DWB.PointAndClickObjectPlacementSettings
+    - O3DWB.Prefab
+    - O3DWB.PrefabActivationSettings
+    - O3DWB.PrefabCategory
+    - O3DWB.PrefabCategoryDatabase
+    - O3DWB.PrefabCategoryPrefabScrollViewData
+    - O3DWB.PrefabFilter
+    - O3DWB.PrefabFoldersToCategoryDropSettings
     - O3DWB.PrefabManagementWindow
+    - O3DWB.PrefabTagAssociations
+    - O3DWB.PrefabTagDatabase
+    - O3DWB.PrefabTagSelectionViewData
+    - O3DWB.PrefabTagsWindow
+    - O3DWB.PrefabsToCategoryDropSettings
+    - O3DWB.ProjectedBoxFacePivotPointsRenderSettings
+    - O3DWB.RectangleShapeRenderSettings
+    - O3DWB.ScriptableObjectPool
+    - O3DWB.SingleDecorPaintModeObjectPlacementSettings
+    - O3DWB.SingleObjectPivotPointRenderSettings
+    - O3DWB.XZGrid
+    - O3DWB.XZGridCellSizeSettings
+    - O3DWB.XZGridRenderSettings
+    - O3DWB.XZOrientedEllipseShapeRenderSettings
     - PlayerMovement
     - oldPlayerMovement
     Unity.2D.Tilemap.Editor.dll:
@@ -13,10 +108,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -27,6 +120,7 @@ ScriptsOnlyBuild:
     - UnityEngine.Networking.NetworkIdentity
     - UnityEngine.Networking.NetworkManager
     - UnityEngine.Networking.NetworkManagerHUD
+    - UnityEngine.Networking.NetworkStartPosition
     - UnityEngine.Networking.NetworkTransform
   sceneClasses:
     Assets/Scenes/efwef.unity:
@@ -48,11 +142,19 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
     - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
       Script: {instanceID: 0}
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 84
+      Script: {instanceID: 0}
+    - Class: 89
       Script: {instanceID: 0}
     - Class: 90
       Script: {instanceID: 0}
@@ -65,19 +167,213 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9990}
+      Script: {instanceID: 9706}
     - Class: 114
-      Script: {instanceID: 10120}
+      Script: {instanceID: 9830}
     - Class: 114
-      Script: {instanceID: 10280}
+      Script: {instanceID: 9832}
     - Class: 114
-      Script: {instanceID: 11310}
+      Script: {instanceID: 9898}
     - Class: 114
-      Script: {instanceID: 12738}
+      Script: {instanceID: 9918}
     - Class: 114
-      Script: {instanceID: 12962}
+      Script: {instanceID: 9942}
     - Class: 114
-      Script: {instanceID: 30016}
+      Script: {instanceID: 9954}
+    - Class: 114
+      Script: {instanceID: 9998}
+    - Class: 114
+      Script: {instanceID: 10010}
+    - Class: 114
+      Script: {instanceID: 10042}
+    - Class: 114
+      Script: {instanceID: 10082}
+    - Class: 114
+      Script: {instanceID: 10140}
+    - Class: 114
+      Script: {instanceID: 10218}
+    - Class: 114
+      Script: {instanceID: 10224}
+    - Class: 114
+      Script: {instanceID: 10248}
+    - Class: 114
+      Script: {instanceID: 10278}
+    - Class: 114
+      Script: {instanceID: 10302}
+    - Class: 114
+      Script: {instanceID: 10356}
+    - Class: 114
+      Script: {instanceID: 10408}
+    - Class: 114
+      Script: {instanceID: 10452}
+    - Class: 114
+      Script: {instanceID: 10464}
+    - Class: 114
+      Script: {instanceID: 10526}
+    - Class: 114
+      Script: {instanceID: 10562}
+    - Class: 114
+      Script: {instanceID: 10692}
+    - Class: 114
+      Script: {instanceID: 10798}
+    - Class: 114
+      Script: {instanceID: 10812}
+    - Class: 114
+      Script: {instanceID: 10828}
+    - Class: 114
+      Script: {instanceID: 10842}
+    - Class: 114
+      Script: {instanceID: 10860}
+    - Class: 114
+      Script: {instanceID: 10866}
+    - Class: 114
+      Script: {instanceID: 10886}
+    - Class: 114
+      Script: {instanceID: 10950}
+    - Class: 114
+      Script: {instanceID: 10958}
+    - Class: 114
+      Script: {instanceID: 10960}
+    - Class: 114
+      Script: {instanceID: 10996}
+    - Class: 114
+      Script: {instanceID: 11036}
+    - Class: 114
+      Script: {instanceID: 11060}
+    - Class: 114
+      Script: {instanceID: 11092}
+    - Class: 114
+      Script: {instanceID: 11100}
+    - Class: 114
+      Script: {instanceID: 11102}
+    - Class: 114
+      Script: {instanceID: 11108}
+    - Class: 114
+      Script: {instanceID: 11188}
+    - Class: 114
+      Script: {instanceID: 11216}
+    - Class: 114
+      Script: {instanceID: 11246}
+    - Class: 114
+      Script: {instanceID: 11270}
+    - Class: 114
+      Script: {instanceID: 11274}
+    - Class: 114
+      Script: {instanceID: 11286}
+    - Class: 114
+      Script: {instanceID: 11290}
+    - Class: 114
+      Script: {instanceID: 11334}
+    - Class: 114
+      Script: {instanceID: 11370}
+    - Class: 114
+      Script: {instanceID: 11384}
+    - Class: 114
+      Script: {instanceID: 11422}
+    - Class: 114
+      Script: {instanceID: 11458}
+    - Class: 114
+      Script: {instanceID: 11518}
+    - Class: 114
+      Script: {instanceID: 11536}
+    - Class: 114
+      Script: {instanceID: 11558}
+    - Class: 114
+      Script: {instanceID: 11638}
+    - Class: 114
+      Script: {instanceID: 11696}
+    - Class: 114
+      Script: {instanceID: 11710}
+    - Class: 114
+      Script: {instanceID: 11712}
+    - Class: 114
+      Script: {instanceID: 11738}
+    - Class: 114
+      Script: {instanceID: 11810}
+    - Class: 114
+      Script: {instanceID: 11848}
+    - Class: 114
+      Script: {instanceID: 11858}
+    - Class: 114
+      Script: {instanceID: 12054}
+    - Class: 114
+      Script: {instanceID: 12068}
+    - Class: 114
+      Script: {instanceID: 12074}
+    - Class: 114
+      Script: {instanceID: 12090}
+    - Class: 114
+      Script: {instanceID: 12140}
+    - Class: 114
+      Script: {instanceID: 12156}
+    - Class: 114
+      Script: {instanceID: 12164}
+    - Class: 114
+      Script: {instanceID: 12166}
+    - Class: 114
+      Script: {instanceID: 12176}
+    - Class: 114
+      Script: {instanceID: 12212}
+    - Class: 114
+      Script: {instanceID: 12250}
+    - Class: 114
+      Script: {instanceID: 12308}
+    - Class: 114
+      Script: {instanceID: 12334}
+    - Class: 114
+      Script: {instanceID: 12352}
+    - Class: 114
+      Script: {instanceID: 12378}
+    - Class: 114
+      Script: {instanceID: 12388}
+    - Class: 114
+      Script: {instanceID: 12404}
+    - Class: 114
+      Script: {instanceID: 12452}
+    - Class: 114
+      Script: {instanceID: 12464}
+    - Class: 114
+      Script: {instanceID: 12486}
+    - Class: 114
+      Script: {instanceID: 12582}
+    - Class: 114
+      Script: {instanceID: 12644}
+    - Class: 114
+      Script: {instanceID: 12682}
+    - Class: 114
+      Script: {instanceID: 12684}
+    - Class: 114
+      Script: {instanceID: 12710}
+    - Class: 114
+      Script: {instanceID: 12744}
+    - Class: 114
+      Script: {instanceID: 12750}
+    - Class: 114
+      Script: {instanceID: 12762}
+    - Class: 114
+      Script: {instanceID: 12812}
+    - Class: 114
+      Script: {instanceID: 12828}
+    - Class: 114
+      Script: {instanceID: 12886}
+    - Class: 114
+      Script: {instanceID: 12918}
+    - Class: 114
+      Script: {instanceID: 12960}
+    - Class: 114
+      Script: {instanceID: 12968}
+    - Class: 114
+      Script: {instanceID: 12986}
+    - Class: 114
+      Script: {instanceID: 13024}
+    - Class: 114
+      Script: {instanceID: 13034}
+    - Class: 114
+      Script: {instanceID: 13064}
+    - Class: 114
+      Script: {instanceID: 13068}
+    - Class: 114
+      Script: {instanceID: 13076}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 135
@@ -92,7 +388,13 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
+      Script: {instanceID: 0}
     - Class: 218
+      Script: {instanceID: 0}
+    - Class: 258
       Script: {instanceID: 0}
     - Class: 1953259897
       Script: {instanceID: 0}
@@ -351,6 +653,12 @@ ScriptsOnlyBuild:
     className: PathObjectPlacementSettings
   - hash:
       serializedVersion: 2
+      Hash: 7b5ca51dd96ec61538b8191b4a341194
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: oldPlayerMovement
+  - hash:
+      serializedVersion: 2
       Hash: 794bcc990e864ad2c108df2ec9a72840
     assemblyName: Assembly-CSharp.dll
     namespaceName: O3DWB
@@ -547,6 +855,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: O3DWB
     className: PrefabInstantiationSettings
+  - hash:
+      serializedVersion: 2
+      Hash: 8665b8f9d548d59cdfaaae8e0b2e166c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Collect
   - hash:
       serializedVersion: 2
       Hash: 124a6376bc3c504bb125fa213c6fe191
@@ -909,12 +1223,6 @@ ScriptsOnlyBuild:
     className: AxisRotationRandomizationSettings
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: BrokenVector.LowPolyFencePack
-    className: DoorToggle
-  - hash:
-      serializedVersion: 2
       Hash: a3e405d181e0b540b7ade58cbf5e9d87
     assemblyName: Assembly-CSharp.dll
     namespaceName: O3DWB
@@ -1057,12 +1365,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: O3DWB
     className: PrefabActivationSettings
-  - hash:
-      serializedVersion: 2
-      Hash: 2e0617456ef7995d079420da481211e4
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: BrokenVector.LowPolyFencePack
-    className: DoorController
   - hash:
       serializedVersion: 2
       Hash: f76b4df737ffa29cd3eabae66d985a9c
@@ -1525,12 +1827,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: eced9a745839ccf7c2e76262f039e2ef
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: oldPlayerMovement
   platform: 19
   scenePathNames:
   - Assets/Scenes/efwef.unity

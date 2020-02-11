@@ -1317,6 +1317,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1447953226755020313}
   - component: {fileID: 1447953226762288261}
+  - component: {fileID: 4065716893577043134}
+  - component: {fileID: 2497945625821510709}
   m_Layer: 0
   m_Name: bird
   m_TagString: Untagged
@@ -1360,3 +1362,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &4065716893577043134
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447953226754720505}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.6199174, y: 10.008015, z: 8.516204}
+  m_Center: {x: -0.02776501, y: 4.6384997, z: 1.0938319}
+--- !u!114 &2497945625821510709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447953226754720505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7f99af46aff2184aabb13d52ee543ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EnemyType: 1

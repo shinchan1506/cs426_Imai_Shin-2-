@@ -10,8 +10,11 @@ using UnityEngine.Networking;
 
 public class oldPlayerMovement : NetworkBehaviour
 {
+    private int numBirds = 0;
+    private int numEggs = 0;
     CharacterController characterController;
     Animator anim;
+    public GameObject explosion;
     float speed = 0.02f;
     float jumpSpeed = 0.08f;
     float gravity = 0.098f;
@@ -29,6 +32,8 @@ public class oldPlayerMovement : NetworkBehaviour
     private Vector3 viewOffset = new Vector3(0,0.6f,0);
     private bool camLocked = true;
     private bool qDebounce = false;
+    
+
     void Start ()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -54,7 +59,7 @@ public class oldPlayerMovement : NetworkBehaviour
         float move = Input.GetAxis ("Vertical");
         float moveHoriz = Input.GetAxis("Horizontal");        
         anim.SetFloat("multiplier", 1f);
-        
+        // print ("eggs: " + numEggs + " birds: " + numBirds);
         // movement
         if (characterController.isGrounded) {
             moveDirection = Vector3.zero + Camera.main.transform.forward * move + Camera.main.transform.right * moveHoriz;
@@ -78,6 +83,26 @@ public class oldPlayerMovement : NetworkBehaviour
 
             if (Input.GetKey(KeyCode.E)) {
                 // interact with bird / egg
+                Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 1);
+                int i = 0;
+                bool foundenemy = false;
+                while (i < hitColliders.Length)
+                {
+                    Collect c = hitColliders[i].GetComponent<Collect>();
+                    if ( c != null) {
+                        int enemyType = c.destroyBody();
+                        if (enemyType == 0) {
+                            numEggs++;
+                        } else {
+                            numBirds++;
+                        }
+                        foundenemy = true;
+                    }
+                    i++;
+                }
+                if (foundenemy) { 
+                    explosion.GetComponent<ParticleSystem>().Play();
+                }
             }
 
             if (Input.GetKey(KeyCode.Q) && qDebounce == false) {

@@ -1,0 +1,236 @@
+newmtl Wedge1Mtl
+Material Color
+Ka 0.598942 0.529523 0.373615
+Kd 0.598942 0.529523 0.373615
+Ks 0.044627 0.0394547 0.027838 
+
+d 1
+
+Ns 0
+
+newmtl Part44Mtl
+Material Color
+Ka 0.0915184 0.0511221 0.0328759
+Kd 0.0915184 0.0511221 0.0328759
+Ks 0.0165092 0.00922202 0.00593056 
+
+d 1
+
+Ns 0
+
+newmtl Wedge2Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.0745098 0.0745098 0.0745098 
+
+d 1
+
+Ns 0
+
+map_Ka Wedge2Tex.png
+map_Kd Wedge2Tex.png
+map_d Wedge2Tex.png
+
+newmtl Glass1Mtl
+Material Color
+Ka 0.00258583 0.00258583 0.00258583
+Kd 0.00258583 0.00258583 0.00258583
+Ks 0.000162248 0.000162248 0.000162248 
+
+d 0.2
+
+Ns 0
+
+newmtl Part59Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.0392157 0.0392157 0.0392157 
+
+d 1
+
+Ns 0
+
+map_Ka Wedge2Tex.png
+map_Kd Wedge2Tex.png
+map_d Wedge2Tex.png
+
+newmtl InteriorLight1Mtl
+Material Color
+Ka 0.766744 0.334458 0.0477758
+Kd 0.766744 0.334458 0.0477758
+Ks 0.0511162 0.0222972 0.00318505 
+
+d 1
+
+Ns 0
+
+newmtl Union8Mtl
+Material Color
+Ka 1 0.766744 0.487765
+Kd 1 0.766744 0.487765
+Ks 0.101961 0.0781778 0.0497329 
+
+d 1
+
+Ns 0
+
+map_Ka Union8Tex.png
+map_Kd Union8Tex.png
+map_d Union8Tex.png
+
+newmtl Part1Mtl
+Material Color
+Ka 0.151058 0.0962661 0.0677246
+Kd 0.151058 0.0962661 0.0677246
+Ks 0.0272497 0.0173657 0.012217 
+
+d 1
+
+Ns 0
+
+newmtl Union7Mtl
+Material Color
+Ka 0.373615 0.368591 0.383775
+Kd 0.373615 0.368591 0.383775
+Ks 0.0380941 0.0375818 0.03913 
+
+d 1
+
+Ns 0
+
+newmtl Union10Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.101961 0.101961 0.101961 
+
+d 1
+
+Ns 0
+
+map_Ka Union10Tex.png
+map_Kd Union10Tex.png
+map_d Union10Tex.png
+
+newmtl Union12Mtl
+Material Color
+Ka 0.320382 0.201096 0.124741
+Kd 0.320382 0.201096 0.124741
+Ks 0.0326664 0.0205039 0.0127187 
+
+d 1
+
+Ns 0
+
+map_Ka Union12Tex.png
+map_Kd Union12Tex.png
+map_d Union12Tex.png
+
+newmtl Part58Mtl
+Material Color
+Ka 0.212044 0.139022 0.0461488
+Kd 0.212044 0.139022 0.0461488
+Ks 0.00831547 0.00545186 0.00180976 
+
+d 1
+
+Ns 0
+
+newmtl Part75Mtl
+Material Color
+Ka 0.598942 0.529523 0.373615
+Kd 0.598942 0.529523 0.373615
+Ks 0.108044 0.0955218 0.0673972 
+
+d 1
+
+Ns 0
+
+newmtl Part71Mtl
+Material Color
+Ka 0.320382 0.201096 0.124741
+Kd 0.320382 0.201096 0.124741
+Ks 0.0577943 0.0362761 0.0225023 
+
+d 1
+
+Ns 0
+
+map_Ka Union12Tex.png
+map_Kd Union12Tex.png
+map_d Union12Tex.png
+
+newmtl Part63Mtl
+Material Color
+Ka 0.124741 0.113921 0.121986
+Kd 0.124741 0.113921 0.121986
+Ks 0.0127187 0.0116155 0.0124378 
+
+d 1
+
+Ns 0
+
+newmtl Part65Mtl
+Material Color
+Ka 0.00258583 0.00258583 0.00258583
+Kd 0.00258583 0.00258583 0.00258583
+Ks 0.000172388 0.000172388 0.000172388 
+
+d 1
+
+Ns 0
+
+newmtl Part68Mtl
+Material Color
+Ka 0.14198 0.0477758 0.0169881
+Kd 0.14198 0.0477758 0.0169881
+Ks 0.0256121 0.00861837 0.00306451 
+
+d 1
+
+Ns 0
+
+newmtl Part69Mtl
+Material Color
+Ka 0.659224 0.523443 0.383775
+Kd 0.659224 0.523443 0.383775
+Ks 0.118919 0.094425 0.0692299 
+
+d 1
+
+Ns 0
+
+map_Ka Part69Tex.png
+map_Kd Part69Tex.png
+map_d Part69Tex.png
+
+newmtl Part76Mtl
+Material Color
+Ka 1 0.766744 0.487765
+Kd 1 0.766744 0.487765
+Ks 0.180392 0.138315 0.087989 
+
+d 1
+
+Ns 0
+
+map_Ka Union8Tex.png
+map_Kd Union8Tex.png
+map_d Union8Tex.png
+
+newmtl Part80Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.180392 0.180392 0.180392 
+
+d 1
+
+Ns 0
+
+map_Ka Union10Tex.png
+map_Kd Union10Tex.png
+map_d Union10Tex.png
+
