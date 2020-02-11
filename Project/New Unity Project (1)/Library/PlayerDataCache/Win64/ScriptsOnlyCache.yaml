@@ -3,6 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - O3DWB.PrefabManagementWindow
     - PlayerMovement
+    - oldPlayerMovement
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
@@ -12,9 +13,11 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationBlendTree.Node
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -73,6 +76,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 12738}
     - Class: 114
       Script: {instanceID: 12962}
+    - Class: 114
+      Script: {instanceID: 30016}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 135
@@ -1520,6 +1525,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: eced9a745839ccf7c2e76262f039e2ef
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: oldPlayerMovement
   platform: 19
   scenePathNames:
   - Assets/Scenes/efwef.unity

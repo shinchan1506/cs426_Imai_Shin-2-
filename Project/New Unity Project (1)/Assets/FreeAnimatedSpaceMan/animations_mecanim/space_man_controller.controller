@@ -31,32 +31,8 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: be6a3cb8fa825e04087db21b112c471f, type: 3}
-    m_Threshold: 0
-    m_Position: {x: -0.2, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: Speed
-    m_Mirror: 0
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 88c2aadb30c496a48996821711786ade, type: 3}
-    m_Threshold: 0.5
-    m_Position: {x: 0, y: 0.2}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: Speed
-    m_Mirror: 0
-  - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: ed66f407effdce94fa9c1211a10e358d, type: 3}
-    m_Threshold: 1
-    m_Position: {x: 0.2, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: Speed
-    m_Mirror: 0
-  - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: e6cd4bb206bb7c94b9e8b949ddfbfe90, type: 3}
-    m_Threshold: 1.5
+    m_Threshold: -1
     m_Position: {x: 0, y: -0.2}
     m_TimeScale: 1
     m_CycleOffset: 0
@@ -64,19 +40,27 @@ BlendTree:
     m_Mirror: 0
   - serializedVersion: 2
     m_Motion: {fileID: 7400000, guid: 7184c11791413af4da8292a009e57d47, type: 3}
-    m_Threshold: 2
+    m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
     m_CycleOffset: 0
     m_DirectBlendParameter: Speed
     m_Mirror: 0
-  m_BlendParameter: HorizSpeed
+  - serializedVersion: 2
+    m_Motion: {fileID: 7400000, guid: 88c2aadb30c496a48996821711786ade, type: 3}
+    m_Threshold: 1
+    m_Position: {x: 0, y: 0.2}
+    m_TimeScale: 1
+    m_CycleOffset: 0
+    m_DirectBlendParameter: Speed
+    m_Mirror: 0
+  m_BlendParameter: Speed
   m_BlendParameterY: Speed
-  m_MinThreshold: 0
-  m_MaxThreshold: 2
+  m_MinThreshold: -1
+  m_MaxThreshold: 1
   m_UseAutomaticThresholds: 0
   m_NormalizedBlendValues: 0
-  m_BlendType: 2
+  m_BlendType: 0
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -93,6 +77,12 @@ AnimatorController:
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
   - m_Name: HorizSpeed
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: multiplier
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -149,13 +139,13 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_SpeedParameterActive: 0
+  m_SpeedParameterActive: 1
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: -2267072280027592400}
   m_Tag: 
-  m_SpeedParameter: 
+  m_SpeedParameter: multiplier
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
-  m_TimeParameter: 
+  m_TimeParameter: Speed
