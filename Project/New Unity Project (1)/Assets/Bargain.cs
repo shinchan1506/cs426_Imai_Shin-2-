@@ -20,7 +20,7 @@ public class Bargain : MonoBehaviour {
 		if (isNo)
 		{
 			// load next level
-			// Application.LoadLevel(1);
+			// Application.LoadLevel(2);
 		}
 	}
 
