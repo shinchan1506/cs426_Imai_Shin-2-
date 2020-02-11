@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 // AUTHOR: Shin Imai
 // Movement with character controller
@@ -32,8 +33,11 @@ public class oldPlayerMovement : NetworkBehaviour
     private Vector3 viewOffset = new Vector3(0,0.6f,0);
     private bool camLocked = true;
     private bool qDebounce = false;
-    
+    public Text numBirdsTxt;
+    public Text numEggsTxt;
+    public Text timerText;
 
+    Timer timer;
     void Start ()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -41,6 +45,9 @@ public class oldPlayerMovement : NetworkBehaviour
         anim = GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
         radius = DEFAULT_RADIUS;
+        timer = GetComponent<Timer>();
+        numBirdsTxt.text = "Birds: 0";
+        numEggsTxt.text = "Eggs: 0";
     }
 
     public GameObject bulletPrefab;
@@ -54,6 +61,9 @@ public class oldPlayerMovement : NetworkBehaviour
     {
         if(!isLocalPlayer)
             return;
+
+
+        timerText.text = timer.updateText();
 
         // set parameters for blend tree animations
         float move = Input.GetAxis ("Vertical");
@@ -93,8 +103,10 @@ public class oldPlayerMovement : NetworkBehaviour
                         int enemyType = c.destroyBody();
                         if (enemyType == 0) {
                             numEggs++;
+                            numEggsTxt.text = "Eggs: " + numEggs;
                         } else {
                             numBirds++;
+                            numBirdsTxt.text = "Birds: " + numBirds;
                         }
                         foundenemy = true;
                     }
