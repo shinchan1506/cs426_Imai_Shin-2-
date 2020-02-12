@@ -1033,8 +1033,10 @@ MonoBehaviour:
   numBirdsTxt: {fileID: 4946036193607687068}
   numEggsTxt: {fileID: 4946036191938167187}
   timerText: {fileID: 4946036192215209712}
+  binaryText: {fileID: 5333910217499628321}
   Canvas: {fileID: 4946036192128930636}
-  bulletPrefab: {fileID: 0}
+  progressManager: {fileID: 9004083957470785019, guid: 89eeac66e7c2d3140b7f66379c69a456,
+    type: 3}
 --- !u!114 &2508540502281492807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2086,6 +2088,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5697238904672757513, guid: 98c7dca12606c7148b9de8f1b856130a,
+        type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98c7dca12606c7148b9de8f1b856130a, type: 3}
 --- !u!1 &4946036192128930636 stripped
@@ -2127,6 +2134,18 @@ MonoBehaviour:
 --- !u!114 &4946036191938167187 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5697238903842140266, guid: 98c7dca12606c7148b9de8f1b856130a,
+    type: 3}
+  m_PrefabInstance: {fileID: 843142002239910393}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5333910217499628321 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4735159225173205720, guid: 98c7dca12606c7148b9de8f1b856130a,
     type: 3}
   m_PrefabInstance: {fileID: 843142002239910393}
   m_PrefabAsset: {fileID: 0}
@@ -2191,10 +2210,60 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 198290536301647374, guid: 9bba9cf244c53c5439505dfc96fdd11c,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198430744222593168, guid: 9bba9cf244c53c5439505dfc96fdd11c,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198683768918104910, guid: 9bba9cf244c53c5439505dfc96fdd11c,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 198856239026640498, guid: 9bba9cf244c53c5439505dfc96fdd11c,
         type: 3}
       propertyPath: looping
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198856239026640498, guid: 9bba9cf244c53c5439505dfc96fdd11c,
+        type: 3}
+      propertyPath: UVModule.flipU
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198856239026640498, guid: 9bba9cf244c53c5439505dfc96fdd11c,
+        type: 3}
+      propertyPath: UVModule.flipV
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198856239026640498, guid: 9bba9cf244c53c5439505dfc96fdd11c,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198856239026640498, guid: 9bba9cf244c53c5439505dfc96fdd11c,
+        type: 3}
+      propertyPath: autoRandomSeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198856239026640498, guid: 9bba9cf244c53c5439505dfc96fdd11c,
+        type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 199756426985724656, guid: 9bba9cf244c53c5439505dfc96fdd11c,
+        type: 3}
+      propertyPath: m_Flip.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 199756426985724656, guid: 9bba9cf244c53c5439505dfc96fdd11c,
+        type: 3}
+      propertyPath: m_Flip.y
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bba9cf244c53c5439505dfc96fdd11c, type: 3}

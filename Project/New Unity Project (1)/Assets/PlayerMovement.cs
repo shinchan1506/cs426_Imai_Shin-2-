@@ -26,7 +26,7 @@ public class PlayerMovement : NetworkBehaviour
     float radius;
 
     float oldAngle = 0;
-	float oldAngleY = 45;
+    float oldAngleY = 45;
     private float forward;
     private Vector3 moveDirection = Vector3.zero;
     private Vector3 lookDirection;
@@ -203,13 +203,13 @@ public class PlayerMovement : NetworkBehaviour
     }
     
     void onZoomOut() {
-		if (radius < MAX_RADIUS)
-			radius = radius + 0.5f;
+        if (radius < MAX_RADIUS)
+            radius = radius + 0.5f;
     }
 
     void onZoomIn() {
-		if (radius > MIN_RADIUS)
-			radius = radius - 0.5f;
+        if (radius > MIN_RADIUS)
+            radius = radius - 0.5f;
     }
 
     [Command] 

@@ -9,9 +9,10 @@ using UnityEngine.UI;
 // Movement with character controller
 // Camera controls w/ mouse delta
 
+
+
 public class oldPlayerMovement : NetworkBehaviour
-{
-    private int numBirds = 0;
+{    private int numBirds = 0;
     private int numEggs = 0;
     CharacterController characterController;
     Animator anim;
@@ -27,7 +28,6 @@ public class oldPlayerMovement : NetworkBehaviour
 
     float oldAngle = 0;
 	float oldAngleY = 45;
-    private float forward;
     private Vector3 moveDirection = Vector3.zero;
     private Vector3 lookDirection;
     private Vector3 viewOffset = new Vector3(0,0.6f,0);
@@ -37,8 +37,13 @@ public class oldPlayerMovement : NetworkBehaviour
     public Text numEggsTxt;
     public Text timerText;
 
+    public Text binaryText;
+
     public GameObject Canvas;
 
+    public GameObject progressManager;
+
+    NetworkClient me;
     // public GameObject timer = GameObject.Find("timer");
     void Start ()
     {
@@ -55,13 +60,31 @@ public class oldPlayerMovement : NetworkBehaviour
         Canvas.SetActive(true);
     }
 
-    public GameObject bulletPrefab;
-
     public override void OnStartLocalPlayer()
     {
+        NetworkClient client= new NetworkClient();
         GetComponent<MeshRenderer>().material.color = Color.red;
-        
+        print ("client started");
+        client.RegisterHandler(ProgressMsg.notif, ReceiveBit);
+        client.RegisterHandler(ProgressMsg.timer, ReceiveTime);
+        client.Connect("localhost", 7777);
     }
+
+    void ReceiveBit(NetworkMessage n) {
+        print("recieved bit");
+        String binarySoFar = n.ReadMessage<ProgressMsg>().type.ToString();
+        binaryText.text = binarySoFar;
+    }
+
+    void ReceiveTime(NetworkMessage n) {
+        print ("received time");
+        int currentTime = n.ReadMessage<ProgressMsg>().type;
+        string min = Mathf.Floor(currentTime/60).ToString("0");
+        string sec = (currentTime % 60).ToString("00");
+        string textToReturn = "" + min + ":" + sec;
+        timerText.text = "Time: " + textToReturn;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -133,7 +156,7 @@ public class oldPlayerMovement : NetworkBehaviour
                     i++;
                 }
                 if (foundenemy) { 
-                    explosion.GetComponent<ParticleSystem>().Play();
+                    explosion.GetComponent<ParticleSystem>().Emit(100);
                 }
             }
 
@@ -152,6 +175,84 @@ public class oldPlayerMovement : NetworkBehaviour
                 qDebounce = false;
             }
         }
+        if (Input.GetButtonDown("Fire1") && numBirds > 0)
+        {
+            // CmdSpawnBullet(chickenBullet);  
+            Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 1);
+            int i = 0;
+            bool foundenemy = false;
+            while (i < hitColliders.Length)
+            {
+                NetworkIdentity neti = hitColliders[i].GetComponent<NetworkIdentity>();
+                CollectEnemy c = hitColliders[i].GetComponent<CollectEnemy>();
+                if (neti != null && !isServer) {
+                    CmdClientAuthority(neti);
+                }
+
+                if ( c != null) {
+                    int enemyType = c.getEnemyType();
+                    if (enemyType == 1) {
+                        numBirds --;
+                        numBirdsTxt.text = "Birds: " + numBirds;
+                        this.GetComponent<NetworkObjectDestroyer>().TellServerToDestroyObject(hitColliders[i].gameObject);
+                        CmdDestroyBody(hitColliders[i].gameObject);
+                        if (isServer) {
+                            RpcDestroyBody(hitColliders[i].gameObject);
+                        }
+                        Destroy(hitColliders[i].gameObject);
+                        foundenemy = true;  
+                        //CmdClientAuthority(progressManager.GetComponent<Progress>().GetComponent<NetworkIdentity>());
+                        ProgressMsg pm = new ProgressMsg();
+                        pm.type = enemyType;
+                        NetworkManager.singleton.client.Send(ProgressMsg.id, pm);
+                    }               
+                }
+                if (foundenemy) { 
+                    explosion.GetComponent<ParticleSystem>().Emit(100);
+                }
+                i++;
+            }
+        }
+
+        if (Input.GetButtonDown("Fire2") && numEggs > 0)
+        {
+            // CmdSpawnBullet(eggBullet);
+            Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 1);
+            int i = 0;
+            bool foundenemy = false;
+            while (i < hitColliders.Length)
+            {
+                NetworkIdentity neti = hitColliders[i].GetComponent<NetworkIdentity>();
+                CollectEnemy c = hitColliders[i].GetComponent<CollectEnemy>();
+                if (neti != null && !isServer) {
+                    CmdClientAuthority(neti);
+                }
+
+                if ( c != null) {
+                    int enemyType = c.getEnemyType();
+                    if (enemyType == 0) {
+                        numEggs --;
+                        numEggsTxt.text = "Eggs: " + numEggs;
+                        this.GetComponent<NetworkObjectDestroyer>().TellServerToDestroyObject(hitColliders[i].gameObject);
+                        CmdDestroyBody(hitColliders[i].gameObject);
+                        if (isServer) {
+                            RpcDestroyBody(hitColliders[i].gameObject);
+                        }
+                        Destroy(hitColliders[i].gameObject);
+                        foundenemy = true;   
+                        ProgressMsg pm = new ProgressMsg();
+                        pm.type = enemyType;
+                        NetworkManager.singleton.client.Send(ProgressMsg.id, pm);
+                    }               
+                }
+                if (foundenemy) { 
+                    explosion.GetComponent<ParticleSystem>().Emit(100);
+                }
+                i++;
+            }
+        }
+
+        
 
         AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
         
@@ -197,7 +298,7 @@ public class oldPlayerMovement : NetworkBehaviour
         characterController.Move(moveDirection);
     }
 
-    private double DegreeToRadian(double angle)
+    double DegreeToRadian(double angle)
     {
         return Math.PI * angle / 180.0;
     }
@@ -235,4 +336,5 @@ public class oldPlayerMovement : NetworkBehaviour
         RpcDestroyBody(c);
         Destroy(c);
     }
+
 }
