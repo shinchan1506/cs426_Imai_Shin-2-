@@ -36,3 +36,7 @@ winner/loser and score(time) based
 
 ### Non-plain-vanilla procedure/rule (see the Hw02 handout for what would qualify as an unusual procedure/rule):
 Player can strike a deal with the evil computer to win at the price of the other players,  but the player cannot trust the evil computer so it will be a gamble 
+
+### Executive Summary:
+Binary Birds is a game of seeking and capturing played on PC for casual gamers of all ages. The goal is to collect a required number of eggs and birds in order to create some binary that will destroy the evil Spacesmasher, a computer intent on destroying you and your friends.
+
