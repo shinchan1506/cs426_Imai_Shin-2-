@@ -1,6 +1,17 @@
-  
 sceneSetups:
-- path: Assets/Scenes/efwef.unity
+- path: Assets/Scenes/desert.unity
+  isLoaded: 0
+  isActive: 0
+  isSubScene: 0
+- path: Assets/main menu.unity
+  isLoaded: 0
+  isActive: 0
+  isSubScene: 0
+- path: Assets/level 1.unity
   isLoaded: 1
   isActive: 1
+  isSubScene: 0
+- path: Assets/Scenes/efwef.unity
+  isLoaded: 1
+  isActive: 0
   isSubScene: 0

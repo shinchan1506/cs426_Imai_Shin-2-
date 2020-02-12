@@ -12,14 +12,15 @@ public class Timer : NetworkBehaviour
     
     GameObject[] players;
 
+    public NetworkManager networkManager;
     public override void OnStartServer()
     {
-        for (float i = currentTime; i > 0; i--) {
-            currentTime--;
-            string min = Mathf.Floor(currentTime/60).ToString("0");
-            string sec = (currentTime % 60).ToString("00");
-            textToReturn = "" + min + ":" + sec;
-            RpcUpdateText(textToReturn);
+        for (float i = currentTime; i > 0; i-=Time.deltaTime) {
+            currentTime-= Time.deltaTime;
+            ProgressMsg pmr = new ProgressMsg();
+            pmr.type = (int)i;
+            // networkManager.client.Send( ProgressMsg.notif, pmr);
+            NetworkServer.SendToAll(ProgressMsg.timer, pmr);
         }        
     }
 
