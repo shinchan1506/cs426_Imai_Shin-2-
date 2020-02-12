@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 // AUTHOR: Shin Imai
 // Movement with character controller
@@ -10,30 +11,48 @@ using UnityEngine.Networking;
 
 public class PlayerMovement : NetworkBehaviour
 {
+    private int numBirds = 0;
+    private int numEggs = 0;
     CharacterController characterController;
     Animator anim;
-    float speed = 3f;
-    float jumpSpeed = 8.0f;
-    float gravity = 20.0f;
+    public GameObject explosion;
+    float speed = 0.02f;
+    float jumpSpeed = 0.08f;
+    float gravity = 0.098f;
     const int SENSITIVITY = 1;
     const float DEFAULT_RADIUS = 1.5f;
     const float MIN_RADIUS = 1;
     const float MAX_RADIUS = 3;
     float radius;
-    Vector3 moveDirection = Vector3.zero;
 
     float oldAngle = 0;
 	float oldAngleY = 45;
     private float forward;
+    private Vector3 moveDirection = Vector3.zero;
+    private Vector3 lookDirection;
+    private Vector3 viewOffset = new Vector3(0,0.6f,0);
     private bool camLocked = true;
-    private bool horizontalPressed = false;
+    private bool qDebounce = false;
+    public Text numBirdsTxt;
+    public Text numEggsTxt;
+    public Text timerText;
+
+    public GameObject Canvas;
+
+    // public GameObject timer = GameObject.Find("timer");
     void Start ()
     {
+        if(!isLocalPlayer)
+            return;
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         anim = GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
         radius = DEFAULT_RADIUS;
+        numBirdsTxt.text = "Birds: 0";
+        numEggsTxt.text = "Eggs: 0";
+        Canvas.SetActive(true);
     }
 
     public GameObject bulletPrefab;
@@ -41,49 +60,97 @@ public class PlayerMovement : NetworkBehaviour
     public override void OnStartLocalPlayer()
     {
         GetComponent<MeshRenderer>().material.color = Color.red;
+        
     }
     // Update is called once per frame
     void Update()
     {
         if(!isLocalPlayer)
             return;
+        
+        // timerText.text = timer.GetComponent<Timer>().updateText();
 
-        bool rotateCharacter = false;
         // set parameters for blend tree animations
         float move = Input.GetAxis ("Vertical");
-        float moveHoriz = Input.GetAxis("Horizontal");
-        anim.SetFloat("Speed", move);
-        anim.SetFloat("HorizSpeed", moveHoriz);
-
+        float moveHoriz = Input.GetAxis("Horizontal");        
+        anim.SetFloat("multiplier", 1f);
+        // print ("eggs: " + numEggs + " birds: " + numBirds);
         // movement
         if (characterController.isGrounded) {
             moveDirection = Vector3.zero + Camera.main.transform.forward * move + Camera.main.transform.right * moveHoriz;
-            moveDirection *= speed;
-
+            if (moveDirection.magnitude > 0) {
+                lookDirection = moveDirection;
+                anim.SetFloat("Speed", 1);
+            } else {
+                anim.SetFloat("Speed", 0);
+            }
+            
+            if (Input.GetKey(KeyCode.LeftShift)) {
+                moveDirection *= speed * 1.25f;
+                anim.SetFloat("multiplier", 4f);
+            } else {
+                moveDirection *= speed;
+            }
+            
             if (Input.GetButton("Jump")) {
                 moveDirection.y = jumpSpeed;
             }
 
             if (Input.GetKey(KeyCode.E)) {
                 // interact with bird / egg
+                Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 1);
+                int i = 0;
+                bool foundenemy = false;
+                while (i < hitColliders.Length)
+                {
+                    Collect c = hitColliders[i].GetComponent<Collect>();
+                    NetworkIdentity neti = hitColliders[i].GetComponent<NetworkIdentity>();
+
+                    if (neti != null && !isServer) {
+                        CmdClientAuthority(neti);
+                    }
+
+                    if ( c != null) {
+                        int enemyType = c.getEnemyType();
+                        this.GetComponent<NetworkObjectDestroyer>().TellServerToDestroyObject(hitColliders[i].gameObject);
+                        CmdDestroyBody(hitColliders[i].gameObject);
+                        if (isServer) {
+                            RpcDestroyBody(hitColliders[i].gameObject);
+                        }
+                        Destroy(hitColliders[i].gameObject);
+
+                        if (enemyType == 0) {
+                            numEggs++;
+                            numEggsTxt.text = "Eggs: " + numEggs;
+                        } else {
+                            numBirds++;
+                            numBirdsTxt.text = "Birds: " + numBirds;
+                        }
+                        foundenemy = true;
+                        
+                    }
+                    
+                    i++;
+                }
+                if (foundenemy) { 
+                    explosion.GetComponent<ParticleSystem>().Play();
+                }
             }
 
-            if (Input.GetKeyUp(KeyCode.Tab)) {
+            if (Input.GetKey(KeyCode.Q) && qDebounce == false) {
+                qDebounce = true;
                 if (camLocked == true){
                     camLocked = false;
-                    Cursor.lockState = CursorLockMode.None;
                     Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
                 }
                 else{
                     camLocked = true;
-                    Cursor.lockState = CursorLockMode.Locked;
                     Cursor.visible = false;
+                    Cursor.lockState = CursorLockMode.Locked;
                 }
+                qDebounce = false;
             }
-            if (moveDirection.magnitude > 0) {
-                rotateCharacter = true;
-            }
-            print(moveDirection);
         }
 
         AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
@@ -105,11 +172,10 @@ public class PlayerMovement : NetworkBehaviour
 
             float newAngleY = oldAngleY + (float)(deltaY/SENSITIVITY * Math.PI);
 
-            // primitive anti ground clipping measures
             if (newAngleY < 0) {
-                newAngleY = 0;
+                    newAngleY = 0;
             } else if (newAngleY > 80) {
-                newAngleY = 80;
+                    newAngleY = 80;
             }
 
             Vector3 cf = new Vector3(
@@ -122,22 +188,18 @@ public class PlayerMovement : NetworkBehaviour
             oldAngle = oldAngle + (float)(deltaX/SENSITIVITY * Math.PI);
             oldAngleY = newAngleY;
             Camera.main.transform.position = cf;
-            Camera.main.transform.LookAt(this.transform.position + new Vector3(0,0.6f,0));
+            Camera.main.transform.LookAt(this.transform.position + viewOffset);
         }
-        
         moveDirection.y -= gravity * Time.deltaTime;
-        if (!(move == 0 && moveHoriz == 0))
-            this.transform.rotation = Quaternion.RotateTowards(this.transform.rotation, Quaternion.LookRotation(new Vector3(moveDirection.x, 0, moveDirection.z), Vector3.up), Time.deltaTime * 360);
+        // Move the controller
+        this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(new Vector3(lookDirection.x, 0, lookDirection.z), Vector3.up), Time.deltaTime * 8);
         
-        // Move the character
-        characterController.Move(moveDirection * Time.deltaTime);
-        //if (move != 0 || (moveHoriz != 0 && move != 0)) {        
-        
+        characterController.Move(moveDirection);
     }
 
     private double DegreeToRadian(double angle)
     {
-    return Math.PI * angle / 180.0;
+        return Math.PI * angle / 180.0;
     }
     
     void onZoomOut() {
@@ -150,4 +212,27 @@ public class PlayerMovement : NetworkBehaviour
 			radius = radius - 0.5f;
     }
 
+    [Command] 
+    void CmdClientAuthority(NetworkIdentity neti)
+    {
+        neti.AssignClientAuthority(this.GetComponent<NetworkIdentity>().connectionToServer);
+    }
+
+    [Command]
+    void CmdRemoveClientAuthority(NetworkIdentity neti) {
+        neti.RemoveClientAuthority(this.GetComponent<NetworkIdentity>().connectionToServer);
+    }
+
+    [ClientRpc]
+    public void RpcDestroyBody(GameObject c) {
+        NetworkServer.Destroy(c);
+        Destroy(c);
+    }
+
+    [Command]
+    public void CmdDestroyBody(GameObject c) 
+    {   
+        RpcDestroyBody(c);
+        Destroy(c);
+    }
 }

@@ -1,21 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Collect : MonoBehaviour
+public class Collect : NetworkBehaviour
 {
     // Start is called before the first frame update
     public int EnemyType;
+    public GameObject parent;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public int getEnemyType() {
+        return EnemyType;
     }
 
-    public int destroyBody() 
-    {
-        Destroy(gameObject);
-        return EnemyType;
+    public GameObject getGameObject() {
+        return parent;
     }
 }
