@@ -3,31 +3,34 @@ using System.Collections.Generic;
 using UnityEngine.Networking;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Timer : NetworkBehaviour
 {
-    float currentTime = 600.0f;
+    public TextMesh timer;
+    float currentTime = 300.0f;
     // public Text text;
     string textToReturn = "";
     
     GameObject[] players;
 
     public NetworkManager networkManager;
-    public override void OnStartServer()
-    {
-        for (float i = currentTime; i > 0; i-=Time.deltaTime) {
-            currentTime-= Time.deltaTime;
-            ProgressMsg pmr = new ProgressMsg();
-            pmr.type = (int)i;
-            // networkManager.client.Send( ProgressMsg.notif, pmr);
-            NetworkServer.SendToAll(ProgressMsg.timer, pmr);
-        }        
-    }
-
     void Update()
     {
-        players = GameObject.FindGameObjectsWithTag ("Player");
+        currentTime -= Time.deltaTime;
+        string min = Mathf.Floor(currentTime/60).ToString("0");
+        string sec = (currentTime % 60).ToString("00");
+        textToReturn = "" + min + ":" + sec;
+        timer.text = textToReturn;
+
+        if (currentTime <= 0.0f) {
+            SceneManager.LoadScene("bargain");
+            SceneManager.UnloadScene("desert");
+            SceneManager.UnloadScene("efwef");
+            SceneManager.UnloadScene("level 1");
+        }
     }
+
 
     public string updateText() {
         return textToReturn;

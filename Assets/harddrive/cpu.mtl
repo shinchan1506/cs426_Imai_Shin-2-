@@ -1,0 +1,24 @@
+newmtl Workspacepart1Mtl
+Material Color
+Ka 0.940601 0.940601 0.940601
+Kd 0.940601 0.940601 0.940601
+Ks 0.379929 0.379929 0.379929 
+
+d 1
+
+Ns 0
+
+newmtl Workspacepart2Mtl
+Material Color
+Ka 1 1 1
+Kd 1 1 1
+Ks 0.403922 0.403922 0.403922 
+
+d 1
+
+Ns 0
+
+map_Ka Workspacepart2Tex.png
+map_Kd Workspacepart2Tex.png
+map_d Workspacepart2Tex.png
+
