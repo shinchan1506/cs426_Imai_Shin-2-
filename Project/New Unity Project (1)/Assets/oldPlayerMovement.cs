@@ -37,17 +37,22 @@ public class oldPlayerMovement : NetworkBehaviour
     public Text numEggsTxt;
     public Text timerText;
 
-    Timer timer;
+    public GameObject Canvas;
+
+    // public GameObject timer = GameObject.Find("timer");
     void Start ()
     {
+        if(!isLocalPlayer)
+            return;
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         anim = GetComponent<Animator>();
         characterController = GetComponent<CharacterController>();
         radius = DEFAULT_RADIUS;
-        timer = GetComponent<Timer>();
         numBirdsTxt.text = "Birds: 0";
         numEggsTxt.text = "Eggs: 0";
+        Canvas.SetActive(true);
     }
 
     public GameObject bulletPrefab;
@@ -55,15 +60,15 @@ public class oldPlayerMovement : NetworkBehaviour
     public override void OnStartLocalPlayer()
     {
         GetComponent<MeshRenderer>().material.color = Color.red;
+        
     }
     // Update is called once per frame
     void Update()
     {
         if(!isLocalPlayer)
             return;
-
-
-        timerText.text = timer.updateText();
+        
+        // timerText.text = timer.GetComponent<Timer>().updateText();
 
         // set parameters for blend tree animations
         float move = Input.GetAxis ("Vertical");
@@ -99,8 +104,21 @@ public class oldPlayerMovement : NetworkBehaviour
                 while (i < hitColliders.Length)
                 {
                     Collect c = hitColliders[i].GetComponent<Collect>();
+                    NetworkIdentity neti = hitColliders[i].GetComponent<NetworkIdentity>();
+
+                    if (neti != null && !isServer) {
+                        CmdClientAuthority(neti);
+                    }
+
                     if ( c != null) {
-                        int enemyType = c.destroyBody();
+                        int enemyType = c.getEnemyType();
+                        this.GetComponent<NetworkObjectDestroyer>().TellServerToDestroyObject(hitColliders[i].gameObject);
+                        CmdDestroyBody(hitColliders[i].gameObject);
+                        if (isServer) {
+                            RpcDestroyBody(hitColliders[i].gameObject);
+                        }
+                        Destroy(hitColliders[i].gameObject);
+
                         if (enemyType == 0) {
                             numEggs++;
                             numEggsTxt.text = "Eggs: " + numEggs;
@@ -109,7 +127,9 @@ public class oldPlayerMovement : NetworkBehaviour
                             numBirdsTxt.text = "Birds: " + numBirds;
                         }
                         foundenemy = true;
+                        
                     }
+                    
                     i++;
                 }
                 if (foundenemy) { 
@@ -190,5 +210,29 @@ public class oldPlayerMovement : NetworkBehaviour
     void onZoomIn() {
 		if (radius > MIN_RADIUS)
 			radius = radius - 0.5f;
+    }
+
+    [Command] 
+    void CmdClientAuthority(NetworkIdentity neti)
+    {
+        neti.AssignClientAuthority(this.GetComponent<NetworkIdentity>().connectionToServer);
+    }
+
+    [Command]
+    void CmdRemoveClientAuthority(NetworkIdentity neti) {
+        neti.RemoveClientAuthority(this.GetComponent<NetworkIdentity>().connectionToServer);
+    }
+
+    [ClientRpc]
+    public void RpcDestroyBody(GameObject c) {
+        NetworkServer.Destroy(c);
+        Destroy(c);
+    }
+
+    [Command]
+    public void CmdDestroyBody(GameObject c) 
+    {   
+        RpcDestroyBody(c);
+        Destroy(c);
     }
 }

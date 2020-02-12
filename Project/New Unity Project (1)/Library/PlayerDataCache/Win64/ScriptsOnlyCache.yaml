@@ -2,7 +2,8 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - Collect
-    - PlayerMovement
+    - NetworkObjectDestroyer
+    - SpawnTargets
     - Timer
     - oldPlayerMovement
     Unity.2D.Tilemap.Editor.dll:
@@ -14,10 +15,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -77,42 +76,42 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9706}
+      Script: {instanceID: 9710}
     - Class: 114
-      Script: {instanceID: 9902}
+      Script: {instanceID: 9906}
     - Class: 114
-      Script: {instanceID: 9914}
+      Script: {instanceID: 9918}
     - Class: 114
-      Script: {instanceID: 9992}
+      Script: {instanceID: 9996}
     - Class: 114
-      Script: {instanceID: 10054}
+      Script: {instanceID: 10058}
     - Class: 114
-      Script: {instanceID: 10090}
+      Script: {instanceID: 10428}
     - Class: 114
-      Script: {instanceID: 10424}
+      Script: {instanceID: 10670}
     - Class: 114
-      Script: {instanceID: 10724}
+      Script: {instanceID: 10730}
     - Class: 114
-      Script: {instanceID: 10976}
+      Script: {instanceID: 10982}
     - Class: 114
-      Script: {instanceID: 11388}
+      Script: {instanceID: 11320}
     - Class: 114
-      Script: {instanceID: 11618}
+      Script: {instanceID: 11396}
     - Class: 114
-      Script: {instanceID: 11754}
+      Script: {instanceID: 11516}
     - Class: 114
-      Script: {instanceID: 41246}
+      Script: {instanceID: 11628}
     - Class: 114
-      Script: {instanceID: 41248}
+      Script: {instanceID: 11764}
     - Class: 114
-      Script: {instanceID: 41250}
+      Script: {instanceID: 40098}
     - Class: 114
-      Script: {instanceID: 63378}
+      Script: {instanceID: 40100}
+    - Class: 114
+      Script: {instanceID: 40102}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
-      Script: {instanceID: 0}
-    - Class: 135
       Script: {instanceID: 0}
     - Class: 137
       Script: {instanceID: 0}
@@ -249,7 +248,7 @@ ScriptsOnlyBuild:
     className: GridLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: f12bf4f5517fad8865cfba04d14b68ca
+      Hash: 2a5577cf9b34b2bf877cb26eebfd1d05
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: oldPlayerMovement
@@ -267,7 +266,7 @@ ScriptsOnlyBuild:
     className: SignalAsset
   - hash:
       serializedVersion: 2
-      Hash: eced9a745839ccf7c2e76262f039e2ef
+      Hash: 2a5577cf9b34b2bf877cb26eebfd1d05
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMovement
@@ -357,7 +356,7 @@ ScriptsOnlyBuild:
     className: ControlPlayableAsset
   - hash:
       serializedVersion: 2
-      Hash: 8665b8f9d548d59cdfaaae8e0b2e166c
+      Hash: 64b3b2a90c138aa6d731937272c810a6
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Collect
@@ -403,6 +402,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ScrollRect
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Timer
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -525,6 +530,12 @@ ScriptsOnlyBuild:
     className: NetworkBehaviour
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NetworkObjectDestroyer
+  - hash:
+      serializedVersion: 2
       Hash: 3b760e6526e13f7504f59e210145899a
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -547,6 +558,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.TestRunner.dll
     namespaceName: UnityEngine.TestTools
     className: BeforeAfterTestCommandState
+  - hash:
+      serializedVersion: 2
+      Hash: f0153a71eeba165c4e4dd8a0a03d6673
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SpawnTargets
   - hash:
       serializedVersion: 2
       Hash: 1dcb82730d983b77cec736c6ef19f814
@@ -679,13 +696,8 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Timer
   platform: 19
   scenePathNames:
   - Assets/Scenes/efwef.unity
-  playerPath: C:/Users/Shin's Dell/Desktop/New Unity Project (1).exe
+  playerPath: C:/Users/Shin's Dell/Desktop/homework/spring2020/426/hw2/cs426_Imai_Shin-2-/Project/New
+    Unity Project (1)/builds/windows/New Unity Project (1).exe
